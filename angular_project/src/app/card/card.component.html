@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row py-5">
+        <h3>Totale foto favorite = {{numberPostLiked}}</h3>
+        <div class="col d-flex flex-wrap gap-5">
+
+            <div class="card" style="width: 18rem;" *ngFor="let item of userList">
+                <img src="../../assets/img/random-photo.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <p class="card-text">{{item.email}}</p>
+                    <div class="d=flex">
+                        <a href="#" class="btn btn-primary" (click)="addLike(item)">Like</a>
+                        <a href="#" class="btn btn-danger" (click)="removeUser(item.id)">Remove</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- {{userList | json}} -->
