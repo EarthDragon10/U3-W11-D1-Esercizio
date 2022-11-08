@@ -27,6 +27,12 @@ export class CardComponent implements OnInit {
   }
 
   removeUser(id: number) {
-    this.userList = this.userList.filter((elem) => elem.id !== id);
+    this.userService.removeUser(id).subscribe(
+      (resp) => {
+        this.userList = this.userList.filter((elem) => elem.id != id);
+      },
+      (error) => console.log(error)
+    );
+    // this.userList = this.userList.filter((elem) => elem.id !== id);
   }
 }
